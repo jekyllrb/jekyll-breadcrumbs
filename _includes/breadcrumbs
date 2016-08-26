@@ -1,7 +1,7 @@
-<a href='{{ site.baseurl }}'> Home </a>
+<a href='{{ site.baseurl }}'>Home</a>
 {% assign crumbs = page.url | split: '/' %}
 {% for crumb in crumbs offset: 1 %}{% if forloop.last %}
-<span> &rsaquo; </span>{{ crumb | replace:'-',' ' | remove:'/index.html' | capitalize }}
+<span>&nbsp;&rsaquo;</span>{{ crumb | replace:'-',' ' | remove:'/index.html' | capitalize }}
 {% else %}
-<span> &rsaquo; </span><a href="{% assign crumb_limit = forloop.index | plus: 1 %}{% for crumb in crumbs limit: crumb_limit %}{{ crumb | append: '/' }}{% endfor %}"> {{ crumb | replace:'-',' ' | remove:'/index.html' | capitalize }} </a>
+<span>&nbsp;&rsaquo;</span><a href="{% assign crumb_limit = forloop.index | plus: 1 %}{% for crumb in crumbs limit: crumb_limit %}{{ crumb | append: '/' }}{% endfor %}">{{ crumb | replace:'-',' ' | remove:'/index.html' | capitalize }}</a>
 {% endif %}{% endfor %}
